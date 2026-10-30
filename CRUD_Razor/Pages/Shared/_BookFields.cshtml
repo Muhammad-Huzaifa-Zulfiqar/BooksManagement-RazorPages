@@ -1,0 +1,40 @@
+@model CRUD_Razor.Models.Book
+
+<div class="row g-3">
+    <div class="col-md-6">
+        <label asp-for="title" class="form-label">Title</label>
+        <input asp-for="title" class="form-control" placeholder="e.g. Clean Code" maxlength="50" />
+        <span asp-validation-for="title" class="field-error"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="author" class="form-label">Author</label>
+        <input asp-for="author" class="form-control" placeholder="e.g. Robert C. Martin" maxlength="50" />
+        <span asp-validation-for="author" class="field-error"></span>
+    </div>
+    <div class="col-12">
+        <label asp-for="description" class="form-label">Description</label>
+        <input asp-for="description" class="form-control" placeholder="Short description (max 50 characters)" maxlength="50" />
+        <span asp-validation-for="description" class="field-error"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="publisher" class="form-label">Publisher</label>
+        <input asp-for="publisher" class="form-control" placeholder="e.g. Prentice Hall" maxlength="50" />
+        <span asp-validation-for="publisher" class="field-error"></span>
+    </div>
+    <div class="col-md-3">
+        <label asp-for="status" class="form-label">Status</label>
+        <input asp-for="status" class="form-control" list="statusList" placeholder="Available" maxlength="50" />
+        <datalist id="statusList">
+            <option value="Available"></option>
+            <option value="Issued"></option>
+            <option value="Reserved"></option>
+            <option value="Lost"></option>
+        </datalist>
+        <span asp-validation-for="status" class="field-error"></span>
+    </div>
+    <div class="col-md-3">
+        <label asp-for="category" class="form-label">Category</label>
+        <input asp-for="category" class="form-control" placeholder="e.g. Programming" maxlength="50" />
+        <span asp-validation-for="category" class="field-error"></span>
+    </div>
+</div>

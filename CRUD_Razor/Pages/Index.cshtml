@@ -1,0 +1,45 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="hero mb-4">
+    <h1>Manage your library,<br />beautifully.</h1>
+    <p>BookShelf is a simple Books Management System built with ASP.NET Core Razor Pages and Microsoft SQL Server.</p>
+    <div class="d-flex flex-wrap gap-2 mt-4">
+        <a asp-page="/Books/Index" class="btn btn-light btn-lg"><i class="bi bi-journal-bookmark me-2"></i>View Books</a>
+        <a asp-page="/Books/Create" class="btn btn-outline-light btn-lg"><i class="bi bi-plus-lg me-2"></i>Add a Book</a>
+    </div>
+</section>
+
+<div class="row g-3">
+    <div class="col-md-3 col-6">
+        <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-plus-circle"></i></div>
+            <h6 class="fw-bold mb-1">Create</h6>
+            <p class="text-muted small mb-0">Add new books to the database.</p>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-card-list"></i></div>
+            <h6 class="fw-bold mb-1">Read</h6>
+            <p class="text-muted small mb-0">Browse and search all records.</p>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-pencil-square"></i></div>
+            <h6 class="fw-bold mb-1">Update</h6>
+            <p class="text-muted small mb-0">Edit any book's details.</p>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-trash3"></i></div>
+            <h6 class="fw-bold mb-1">Delete</h6>
+            <p class="text-muted small mb-0">Remove books with confirmation.</p>
+        </div>
+    </div>
+</div>

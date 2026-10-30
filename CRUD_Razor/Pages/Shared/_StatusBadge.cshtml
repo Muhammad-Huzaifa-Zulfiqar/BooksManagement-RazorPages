@@ -1,0 +1,19 @@
+@model string?
+@{
+    var s = (Model ?? "").Trim().ToLowerInvariant();
+    var css = s switch
+    {
+        "available" or "in stock" or "active" => "status-ok",
+        "issued" or "reserved" or "borrowed" => "status-warn",
+        "lost" or "damaged" or "unavailable" => "status-bad",
+        _ => "status-neutral"
+    };
+}
+@if (string.IsNullOrWhiteSpace(Model))
+{
+    <span class="text-muted">&mdash;</span>
+}
+else
+{
+    <span class="status @css">@Model</span>
+}

@@ -1,0 +1,26 @@
+@page "{id:int}"
+@model CRUD_Razor.EditModel
+@{
+    ViewData["Title"] = "Edit Book";
+}
+
+<div class="page-head">
+    <div>
+        <h2>Edit Book</h2>
+        <p class="sub">Update the details for book #@Model.Book.Id.</p>
+    </div>
+</div>
+
+<div class="card-panel form-card">
+    <form method="post">
+        <input type="hidden" asp-for="Book.Id" />
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <partial name="_BookFields" for="Book" />
+
+        <div class="d-flex gap-2 mt-4">
+            <button type="submit" class="btn btn-brand"><i class="bi bi-arrow-repeat me-1"></i>Update Book</button>
+            <a asp-page="Index" class="btn btn-outline-secondary">Cancel</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,25 @@
+@page
+@model CRUD_Razor.CreateModel
+@{
+    ViewData["Title"] = "Add Book";
+}
+
+<div class="page-head">
+    <div>
+        <h2>Add New Book</h2>
+        <p class="sub">Fill in the details below and save.</p>
+    </div>
+</div>
+
+<div class="card-panel form-card">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <partial name="_BookFields" for="Book" />
+
+        <div class="d-flex gap-2 mt-4">
+            <button type="submit" class="btn btn-brand"><i class="bi bi-check2-circle me-1"></i>Save Book</button>
+            <a asp-page="Index" class="btn btn-outline-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
